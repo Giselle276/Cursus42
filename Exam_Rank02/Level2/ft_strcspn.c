@@ -10,25 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <string.h>
 
-size_t ft_strcspn(const char *s, const char *reject)
+char *ft_strchr(char *s, int c)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (s[i] != '\0')
+	while(*s!='\0')
 	{
-		j = 0;
-		while (reject[j] != '\0')
-		{
-			if (s[i] == reject[j])
-				return (i);
-			j++;
-		}
+		if(*s==c)
+			return((char *)s);
+		s++;
+	}
+	return(0);
+}
+
+size_t	ft_strcspn(const char *s, const char *reject)
+{
+	size_t i=0;
+	while(s[i]!='\0')
+	{
+		if(ft_strchr(reject,s[i])!=0)
+			break;
 		i++;
 	}
-	return (i);
+	return(i);
 }

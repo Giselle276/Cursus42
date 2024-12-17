@@ -10,27 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list_size.h"
-
-int	ft_list_size ( t_list *begin_list)
+typedef struct    s_list
 {
-	if (begin_list == 0)
-		return (0);
-	else
-		return (1 + ft_list_size (begin_list ->next));
-}
+    struct s_list *next;
+    void          *data;
+}                 t_list;
 
-
-//otra forma
-#include <stdio.h>
 int	ft_list_size ( t_list *begin_list)
 {
 	int c;
 	c=0;
-	while(begin_list!=NULL)
+	while(begin_list)
 	{
 		c++;
 		begin_list=begin_list->next;
 	}
-	return(0);
+	return(c);
 }

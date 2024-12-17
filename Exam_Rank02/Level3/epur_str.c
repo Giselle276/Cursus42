@@ -15,7 +15,7 @@
 int	main (int argc, char *argv[])
 {
 	int	i;
-	int	flag;
+	int	flag=0;
 	char	*str;
 
 	i = 0;
@@ -34,7 +34,7 @@ int	main (int argc, char *argv[])
 					write(1," ", 1);
 				flag = 0;
 				write(1, &str[i], 1);
-			} 
+			}
 			i++;
 		}
 	}
