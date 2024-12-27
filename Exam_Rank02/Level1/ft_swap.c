@@ -18,20 +18,3 @@ void	ft_swap(int *a, int *b)
 	*a = *b;
 	*b = temp;
 }
-#include<stdio.h>
-
-int	main()
-{
-	int	a;
-	int	b;
-
-	a = 10;
-	b = 5;
-
-	printf("Valor de a antes del cambio:%d\n", a);
-	printf("Valor de b antes del cambio:%d\n", b);
-	ft_swap(&a,&b);
-	printf("Valor despues del cambio a:%d\n", a);
-	printf("Valor despuues del cambio b a:%d\n", b);
-	return (0);
-}
