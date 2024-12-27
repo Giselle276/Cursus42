@@ -10,40 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <unistd.h>
-
-int	main(int argc, char *argv[])
-{
-	char	*str;
-	int	i;
-	int	c;
-
-	i = 0;
-	str = argv[1];
-	if (argc == 2)
-	{
-		while (str[i] != '\0')
-		{
-			if (str[i]>= 'a' && str[i]<='z')
-				c = str[i] - 'a' + 1;
-			else if (str[i]>='A' && str[i]<='Z')
-				c = str[i] - 'A' + 1;
-			else
-				c = 1;
-		while (c)
-		{
-			write(1, &str[i], 1);
-			c--;
-		}
-		i++;
-		}
-	}
-	write(1, "\n", 1);
-	return(0);
-}
-*/
-
 #include <unistd.h>
 
 int	main(int argc, char *argv[])
