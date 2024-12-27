@@ -20,16 +20,3 @@ int	ft_strlen(char *str)
 	}
 	return (i);
 }
-#include <stdio.h>
-
-int	main (int argc, char *argv[])
-{
-	char	*str;
-
-	str = argv[1];
-	if (argc != 2)
-		printf("Error\n");
-	else
-	printf("Cantidad:%d", ft_strlen(str));
-	return (0);
-}
