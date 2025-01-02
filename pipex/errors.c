@@ -12,10 +12,18 @@
 
 #include "pipex.h"
 
-void	file_error(int file_fd, char *argv)
+void	file_error(int fin_fd, char *argv)
 {
-	if (file_fd < 0)
+	if (fin_fd < 0)
+	{
 		print_error(argv);
+		fin_fd = open("/dev/null", O_RDONLY);
+		if (fin_fd < 0)
+		{
+			perror("pipex: failed to open /dev/null");
+			exit(EXIT_FAILURE);
+		}
+	}
 }
 
 void	fork_error(void)
@@ -32,10 +40,11 @@ void	print_error(char *argv)
 		{
 			ft_putstr("zsh: permission denied: ");
 			ft_putstr(argv);
-			exit(EXIT_FAILURE);
+			ft_putstr("\n");
+			return ;
 		}
 	}
-	ft_putstr("Error while opening : ");
+	ft_putstr("zsh: no such file or directory: ");
 	ft_putstr(argv);
-	exit(EXIT_FAILURE);
+	ft_putstr("\n");
 }
